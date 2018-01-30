@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import BlogTile from './subcomponents/BlogTile';
-
+import axios from 'axios';
 // import axios
 
 class User extends Component{
@@ -15,7 +15,35 @@ class User extends Component{
     }
 
     // insert componentWillMount
-    
+    componentWillMount(){
+        var idParam = this.props.match.params.id;
+        // axios.get(`/api/users/${idParam}`).then(response => {
+        //     this.setState({
+        //         user: response.data
+        //     })
+        // }).catch(console.log)
+
+        
+        // axios.get(`/api/blogs?userID=${idParam}`).then(response => {
+        //     this.setState({
+        //         posts: response.data
+        //     })
+        // })
+
+        function users() {
+            return axios.get(`/api/users/${idParam}`);
+        }
+        function posts() {
+            return axios.get(`/api/blogs?userID=${idParam}`)
+        }
+
+        axios.all([users(), posts()]).then(axios.spread((users, posts)=>{
+            this.setState({
+                user: users.data,
+                posts: posts.data
+            })
+        }))
+    }
 
     render(){
         const user = this.state.user

@@ -221,6 +221,13 @@
       "image": "https://unsplash.it/700/400",
       "text": "dasj;lfksjfl;aksdjflaskj",
       "id": 22
+    },
+    {
+      "title": "COOL",
+      "subTitle": "not cool",
+      "image": "",
+      "text": "the blog is here",
+      "id": 23
     }
   ],
   "users": [
@@ -301,6 +308,21 @@
       "name": "Leo",
       "img": "https://unsplash.it/300/?random",
       "desc": "I'm not real. I'm just a pseudonym of a guy that doesn't like waiting for fast food workers to figure out how to spell his name."
+    },
+    {
+      "name": "Joshua D Borup",
+      "img": "",
+      "desc": "nothing",
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "name": "this",
+      "img": "",
+      "desc": "gyts",
+      "id": 15
     }
   ]
 }
